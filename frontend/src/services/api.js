@@ -1,7 +1,8 @@
 import axios from "axios";
 
-// FastAPI backend URL
-const API_URL = "http://localhost:8000";
+const API_BASE = process.env.NODE_ENV === 'production' 
+  ? 'https://notes-app-backend-wine.vercel.app/api'  // Update this URL
+  : 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: API_URL,
